@@ -38,4 +38,5 @@ eureka:
     instanceId: ${spring.application.name}:${server.port}
   server:
     waitTimeInMsWhenSyncEmpty: 0
+    eviction-interval-timer-in-ms: 300000 # 5 minutes
     enableSelfPreservation: true
