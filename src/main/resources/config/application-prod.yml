@@ -30,13 +30,7 @@ eureka:
       enabled: true
     register-with-eureka: false
     fetch-registry: false
-  instance:
-    prefer-ip-address: true
-    hostname: localhost
-    lease-renewal-interval-in-seconds: 5  # Heartbeat frequency
-    lease-expiration-duration-in-seconds: 60  # Expiration time if no heartbeat received
-    instanceId: ${spring.application.name}:${server.port}
   server:
-    waitTimeInMsWhenSyncEmpty: 0
+    waitTimeInMsWhenSyncEmpty: 180000 # 3 minutes
     eviction-interval-timer-in-ms: 300000 # 5 minutes
     enableSelfPreservation: true
