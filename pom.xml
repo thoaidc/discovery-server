@@ -112,6 +112,38 @@
 		<!-- Declare default configuration for plugins in the project -->
 		<pluginManagement>
 			<plugins>
+				<!-- Spring Boot build JAR -->
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+					<version>${spring-boot.version}</version>
+
+					<configuration>
+						<layers>
+							<enabled>true</enabled>
+						</layers>
+						<additionalProperties>
+							<encoding>UTF-8</encoding>
+							<environment>${profiles.active}</environment>
+						</additionalProperties>
+					</configuration>
+
+					<executions>
+						<execution>
+							<id>repackage</id>
+							<goals>
+								<goal>repackage</goal>
+							</goals>
+						</execution>
+						<execution>
+							<id>build-info</id>
+							<goals>
+								<goal>build-info</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
 				<!-- Auto format code -->
 				<plugin>
 					<groupId>com.diffplug.spotless</groupId>
@@ -250,16 +282,8 @@
 		<plugins>
 			<!-- Build JAR -->
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<configuration>
-					<archive>
-						<manifest>
-							<addClasspath>true</addClasspath>
-							<mainClass>${main-start-class}</mainClass>
-						</manifest>
-					</archive>
-				</configuration>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 
 			<!-- Clean old target build -->
