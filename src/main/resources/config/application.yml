@@ -10,6 +10,7 @@
 # Full reference is available at:
 # https://docs.spring.io/spring-boot/reference/features/profiles.html
 # ===================================================================
+#spring.config.import: optional:configserver:http://localhost:8888
 
 server:
   servlet:
@@ -28,13 +29,16 @@ spring:
     name: service-discovery
   profiles:
     active: "@profiles.active@"
+#  cloud:
+#    config:
+#      uri: http://localhost:8888
 
 # Actuator endpoints
 management:
   endpoints:
     web:
       exposure:
-        include: health,info,metrics
+        include: health,info,metrics,refresh
   endpoint:
     health:
       show-details: always
