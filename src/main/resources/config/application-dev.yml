@@ -15,6 +15,7 @@ logging:
   level:
     root: debug
     com.ars.eureka: debug
+    org.glassfish.jersey: info
   charset:
     console: UTF-8
     file: UTF-8

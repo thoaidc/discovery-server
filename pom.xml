@@ -20,6 +20,12 @@
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>com.dct</groupId>
+			<artifactId>starter-model</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
 		<!-- Eureka Server -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -104,14 +110,6 @@
 	<build>
 		<finalName>${project.artifactId}-${project.version}</finalName>
 		<defaultGoal>spring-boot:run</defaultGoal>
-
-		<!-- Allows Maven to process and replace variables (placeholders) in resource files (e.g. application.yml, etc.) when building -->
-		<resources>
-			<resource>
-				<directory>src/main/resources</directory>
-				<filtering>true</filtering>
-			</resource>
-		</resources>
 
 		<plugins>
 			<!-- Build JAR -->
