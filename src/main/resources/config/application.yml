@@ -13,6 +13,17 @@
 
 spring.config.import: optional:configserver:http://localhost:8888
 
+spring:
+  application:
+    name: service-discovery
+  profiles:
+    active: "@profiles.active@"
+  cloud:
+    config:
+      uri: http://localhost:8888
+  lifecycle:
+    timeout-per-shutdown-phase: 10s
+
 server:
   servlet:
     session:
@@ -24,15 +35,6 @@ server:
         http-only: true
   port: 8761
   shutdown: graceful
-
-spring:
-  application:
-    name: service-discovery
-  profiles:
-    active: "@profiles.active@"
-  cloud:
-    config:
-      uri: http://localhost:8888
 
 # Actuator endpoints
 management:

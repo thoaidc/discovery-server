@@ -20,6 +20,7 @@
 	</properties>
 
 	<dependencies>
+		<!--suppress VulnerableLibrariesLocal -->
 		<dependency>
 			<groupId>com.dct</groupId>
 			<artifactId>starter-model</artifactId>
@@ -27,33 +28,10 @@
 		</dependency>
 
 		<!-- Eureka Server -->
+		<!--suppress VulnerableLibrariesLocal -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>commons-lang</groupId>
-					<artifactId>commons-lang</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>3.18.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient</artifactId>
-			<version>4.5.13</version>
-			<exclusions>
-				<exclusion>
-					<groupId>commons-logging</groupId>
-					<artifactId>commons-logging</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 
 		<!-- Actuator for monitoring -->

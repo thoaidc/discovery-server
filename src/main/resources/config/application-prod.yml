@@ -18,18 +18,18 @@ logging:
   charset:
     console: UTF-8
     file: UTF-8
-  # Custom properties to define logs file paths according to different profiles
-  file-path: /mnt/logs
+  file:
+    path: /opt/logs/discovery-server
 
 # Eureka client configuration
 eureka:
   client:
     service-url:
-      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
+      defaultZone: http://server:8761/eureka/,http://server-backup:8761/eureka/
     healthcheck:
       enabled: true
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: true
+    fetch-registry: true
   server:
     waitTimeInMsWhenSyncEmpty: 180000 # 3 minutes
     eviction-interval-timer-in-ms: 300000 # 5 minutes
