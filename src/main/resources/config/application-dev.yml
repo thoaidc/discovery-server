@@ -10,11 +10,17 @@
 # Full reference is available at:
 # https://docs.spring.io/spring-boot/reference/features/profiles.html
 # ===================================================================
+spring.config.import: optional:configserver:http://localhost:8888
+
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8888
 
 logging:
   level:
     root: debug
-    com.ars.eureka: debug
+    com.dct.discovery: debug
     org.glassfish.jersey: info
   charset:
     console: UTF-8

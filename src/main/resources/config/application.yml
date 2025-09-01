@@ -11,16 +11,12 @@
 # https://docs.spring.io/spring-boot/reference/features/profiles.html
 # ===================================================================
 
-spring.config.import: optional:configserver:http://localhost:8888
 
 spring:
   application:
-    name: service-discovery
+    name: discovery-server
   profiles:
     active: "@profiles.active@"
-  cloud:
-    config:
-      uri: http://localhost:8888
   lifecycle:
     timeout-per-shutdown-phase: 10s
 

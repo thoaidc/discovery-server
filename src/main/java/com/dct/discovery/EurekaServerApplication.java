@@ -1,4 +1,4 @@
-package com.ars.eureka;
+package com.dct.discovery;
 
 import com.dct.model.config.CRLFLogConverter;
 import org.slf4j.Logger;

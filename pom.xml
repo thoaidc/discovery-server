@@ -1,11 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.ars</groupId>
-	<artifactId>service-discovery</artifactId>
+	<artifactId>discovery-server</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
-	<name>service-discovery</name>
+	<name>discovery-server</name>
 
 	<parent>
 		<groupId>com.dct</groupId>
@@ -16,7 +15,7 @@
 
 	<properties>
 		<profiles.active>dev</profiles.active>
-		<main-start-class>com.ars.eureka.EurekaServerApplication</main-start-class>
+		<main-start-class>com.dct.discovery.EurekaServerApplication</main-start-class>
 	</properties>
 
 	<dependencies>
@@ -50,22 +49,6 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.xmlunit</groupId>
-					<artifactId>xmlunit-core</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>com.jayway.jsonpath</groupId>
-					<artifactId>json-path</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 	</dependencies>
 
