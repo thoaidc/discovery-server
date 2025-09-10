@@ -10,12 +10,12 @@
 # Full reference is available at:
 # https://docs.spring.io/spring-boot/reference/features/profiles.html
 # ===================================================================
-spring.config.import: optional:configserver:http://localhost:8888
+spring.config.import: optional:configserver:http://ars-config-server:8888
 
 spring:
   cloud:
     config:
-      uri: http://localhost:8888
+      uri: http://ars-config-server:8888
 
 logging:
   level:
@@ -25,17 +25,17 @@ logging:
     console: UTF-8
     file: UTF-8
   file:
-    path: /opt/logs/discovery-server
+    path: /app/logs
 
 # Eureka client configuration
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
+      defaultZone: http://localhost:8761/eureka
     healthcheck:
       enabled: true
-    register-with-eureka: true
-    fetch-registry: true
+    register-with-eureka: false
+    fetch-registry: false
   server:
     waitTimeInMsWhenSyncEmpty: 180000 # 3 minutes
     eviction-interval-timer-in-ms: 300000 # 5 minutes
