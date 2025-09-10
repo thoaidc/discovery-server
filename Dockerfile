@@ -11,7 +11,7 @@ COPY pom.xml ./
 # Cache Maven dependencies
 RUN mvn dependency:go-offline -B
 
-# Copy full source codepom.xml
+# Copy full source code
 COPY src ./src
 
 # Build Spring Boot jar
